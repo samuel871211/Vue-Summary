@@ -117,6 +117,30 @@ EX: <Component><div>hello</div></Component>
 引用組件的時候，就可以使用v-slot:name來對應到組件內slot的安插位置
 ```
 
+## scoped slot
+```
+這是一個可以讓父層取得組件內部data的技巧
+
+通常會用在列表渲染，每個組件在引用的時候
+
+可以根據情景，渲染成不同的樣式
+```
+
+## provide inject
+```
+跟react的useContext應該是類似的概念
+
+當組件樹很深的時候，如果要從root一路傳遞props到樹節點
+
+這樣做會很麻煩，而且不好維護，牽一髮而動全身
+
+provide就是context的provider
+
+inject就是context的consumer
+
+如此一來，就不必層層傳遞，所有root底下的組件都可以inject data
+```
+
 
 # vue-practice
 

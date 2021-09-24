@@ -1,36 +1,36 @@
 <template>
-  <DynamicAttributes/>
-  <hr/>
-  <Debouncing/>
-  <hr/>
-  <Debouncing/>
-  <hr/>
-  <Throttling/>
-  <hr/>
-  <Throttling/>
-  <hr/>
-  <ComputedVersusMethod/>
-  <hr/>
-  <ClassBinding/>
-  <hr/>
-  <EventHandleAdvance/>
-  <hr/>
-  <ComponentProps :primaryTitle="'hello'"/>
-  <hr/>
-  <ComponentProps :primaryTitle="2"/>
-  <hr/>
-  <NonPropAttrs id="hello" class="oh my god" @click="excuseMe"/>
-  <hr/>
-  <Slots>my name is yu sheng</Slots>
-  <hr/>
+  <DynamicAttributes />
+  <hr />
+  <Debouncing />
+  <hr />
+  <Debouncing />
+  <hr />
+  <Throttling />
+  <hr />
+  <Throttling />
+  <hr />
+  <ComputedVersusMethod />
+  <hr />
+  <ClassBinding />
+  <hr />
+  <EventHandleAdvance />
+  <hr />
+  <ComponentProps :primaryTitle="'hello'" />
+  <hr />
+  <ComponentProps :primaryTitle="2" />
+  <hr />
+  <NonPropAttrs id="hello" class="oh my god" @click="excuseMe" />
+  <hr />
+  <Slot>my name is yu sheng</Slot>
+  <hr />
   <Slot>
     <div style="color: red">it can also insert html</div>
   </Slot>
-  <hr/>
-  <SlotWithDefaultContent/>
-  <hr/>
+  <hr />
+  <SlotWithDefaultContent />
+  <hr />
   <SlotWithDefaultContent>default is not submit</SlotWithDefaultContent>
-  <hr/>
+  <hr />
   <NamedSlot>
     <template v-slot:header>
       <header>
@@ -61,7 +61,9 @@
       <b>{{ `${jsonKey}: ${value}` }}</b>
     </template>
   </ScopedSlot>
-
+  <hr />
+  <div>provide data from ancestor, inject data to deeply nested children</div>
+  <ProvideInject />
 </template>
 
 <script>
@@ -77,6 +79,7 @@ import Slot from './components/Slot.vue'
 import SlotWithDefaultContent from './components/SlotWithDefaultContent.vue'
 import NamedSlot from './components/NamedSlot.vue'
 import ScopedSlot from './components/ScopedSlot.vue'
+import ProvideInject from './components/ProvideInject.vue'
 
 export default {
   components: {
@@ -91,13 +94,24 @@ export default {
     Slot,
     SlotWithDefaultContent,
     NamedSlot,
-    ScopedSlot
+    ScopedSlot,
+    ProvideInject,
+  },
+  data() {
+    return {
+      todo: [1, 2, 3, 4, 5],
+    }
+  },
+  provide() {
+    return {
+      todo: this.todo,
+    }
   },
   methods: {
     excuseMe() {
       alert('NonPropAttrs clicked')
-    }
-  }
+    },
+  },
 }
 </script>
 
