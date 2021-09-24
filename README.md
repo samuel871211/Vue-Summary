@@ -88,24 +88,33 @@ EX: <div :[attributeName]="'hello'">hello world</div>
 但如果template裡面有多個root，就需要指定要掛在哪個root
 ```
 
-## slots
+## slot
 ```
 這個功能，讓組件變得更彈性，在組件內的template定義<slot></slot>
 
-父層要引用組件的時候，可以在兩個tag裡面安插一些html標籤
+要引用組件的時候，可以在兩個tag裡面安插一些html標籤
 
 EX: <Component><div>hello</div></Component>
 
 它就會自動被replace到組件內定義的<slot></slot>
 
 雖然也可以用props來實作，但是slot可以讓組件的重複利用有更多彈性空間
+```
 
-
+## slot with default content
+```
 另外，也可以在組件內的template定義<slot>content</slot>
 
 如此一來，如果沒有提供任何安插進去的slot，就會預設render "content"
 
 如果有的話，就會把content改成安插進去的slot
+```
+
+## named slot
+```
+組件內可以安插多個slot，給予name這個attribute，預設的name="default"
+
+引用組件的時候，就可以使用v-slot:name來對應到組件內slot的安插位置
 ```
 
 

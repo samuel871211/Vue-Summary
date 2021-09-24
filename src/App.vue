@@ -23,13 +23,45 @@
   <hr/>
   <Slots>my name is yu sheng</Slots>
   <hr/>
-  <Slots>
+  <Slot>
     <div style="color: red">it can also insert html</div>
-  </Slots>
+  </Slot>
   <hr/>
   <SlotWithDefaultContent/>
   <hr/>
   <SlotWithDefaultContent>default is not submit</SlotWithDefaultContent>
+  <hr/>
+  <NamedSlot>
+    <template v-slot:header>
+      <header>
+        <h1>Here might be a page title</h1>
+      </header>
+    </template>
+
+    <template v-slot:default>
+      <main>
+        <p>A paragraph for the main content.</p>
+        <p>And another one.</p>
+      </main>
+    </template>
+
+    <template v-slot:footer>
+      <footer>
+        <p>Here's some contact info</p>
+      </footer>
+    </template>
+  </NamedSlot>
+
+  <ScopedSlot>
+    <div>this is a scoped slot</div>
+    <template v-slot:first="{ item }">
+      <b>{{ item }}</b>
+    </template>
+    <template v-slot:second="{ jsonKey, value }">
+      <b>{{ `${jsonKey}: ${value}` }}</b>
+    </template>
+  </ScopedSlot>
+
 </template>
 
 <script>
@@ -41,8 +73,10 @@ import ClassBinding from './components/ClassBinding.vue'
 import EventHandleAdvance from './components/EventHandleAdvance.vue'
 import ComponentProps from './components/ComponentProps.vue'
 import NonPropAttrs from './components/NonPropAttrs.vue'
-import Slots from './components/Slots.vue'
+import Slot from './components/Slot.vue'
 import SlotWithDefaultContent from './components/SlotWithDefaultContent.vue'
+import NamedSlot from './components/NamedSlot.vue'
+import ScopedSlot from './components/ScopedSlot.vue'
 
 export default {
   components: {
@@ -54,8 +88,10 @@ export default {
     EventHandleAdvance,
     ComponentProps,
     NonPropAttrs,
-    Slots,
-    SlotWithDefaultContent
+    Slot,
+    SlotWithDefaultContent,
+    NamedSlot,
+    ScopedSlot
   },
   methods: {
     excuseMe() {

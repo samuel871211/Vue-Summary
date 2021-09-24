@@ -5,7 +5,7 @@
   <button
     @click="
       greenText = false;
-      biggerFontSize = false;
+      biggerFontSize = false
     "
   >
     reset
@@ -18,9 +18,9 @@ export default {
     return {
       greenText: false,
       biggerFontSize: false,
-    };
-  }
-};
+    }
+  },
+}
 </script>
 
 <style scoped>
