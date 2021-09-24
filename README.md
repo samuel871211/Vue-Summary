@@ -51,6 +51,64 @@ EX: 使用者連續點擊"登入"10次 => 1秒的timer到期 => 才會去做登�
 EX: 頁面滾動的速度控制在每100ms 50ms 20ms觸發一次
 ```
 
+## dynamic attributes
+```
+可綁定id class等等動態屬性，也可以綁定on事件，例如onclick, onchange
+
+EX: <input type="text" @[eventName]="handleEvent">
+
+EX: <div :[attributeName]="'hello'">hello world</div>
+```
+
+## event handle advance
+```
+.once: 只會被觸發一次
+
+.prevent: preventDefault，例如mouseWheel會觸發網頁的scroll
+
+.capture: 捕獲事件是從外到內
+
+.stop: 防止冒泡，冒泡是從內到外
+
+.trim: 可用在input v-model.trim，去除使用者輸入的空白符
+
+.number: 可用在input type number v-model.number，把string type data轉成number
+
+@keydown.enter: 監聽常用的key event
+```
+
+## non prop attributes
+```
+沒有定義在組件props的屬性，例如id class @click，這些也可以傳遞到組件的
+
+在組件的scope中，可以透過this.$attrs來取得
+
+注意，預設會自動把non prop attributes掛在template的root節點
+
+但如果template裡面有多個root，就需要指定要掛在哪個root
+```
+
+## slots
+```
+這個功能，讓組件變得更彈性，在組件內的template定義<slot></slot>
+
+父層要引用組件的時候，可以在兩個tag裡面安插一些html標籤
+
+EX: <Component><div>hello</div></Component>
+
+它就會自動被replace到組件內定義的<slot></slot>
+
+雖然也可以用props來實作，但是slot可以讓組件的重複利用有更多彈性空間
+
+
+另外，也可以在組件內的template定義<slot>content</slot>
+
+如此一來，如果沒有提供任何安插進去的slot，就會預設render "content"
+
+如果有的話，就會把content改成安插進去的slot
+```
+
+
 # vue-practice
 
 ## Project setup

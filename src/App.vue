@@ -26,6 +26,10 @@
   <Slots>
     <div style="color: red">it can also insert html</div>
   </Slots>
+  <hr/>
+  <SlotWithDefaultContent/>
+  <hr/>
+  <SlotWithDefaultContent>default is not submit</SlotWithDefaultContent>
 </template>
 
 <script>
@@ -38,6 +42,7 @@ import EventHandleAdvance from './components/EventHandleAdvance.vue'
 import ComponentProps from './components/ComponentProps.vue'
 import NonPropAttrs from './components/NonPropAttrs.vue'
 import Slots from './components/Slots.vue'
+import SlotWithDefaultContent from './components/SlotWithDefaultContent.vue'
 
 export default {
   components: {
@@ -49,7 +54,8 @@ export default {
     EventHandleAdvance,
     ComponentProps,
     NonPropAttrs,
-    Slots
+    Slots,
+    SlotWithDefaultContent
   },
   methods: {
     excuseMe() {
