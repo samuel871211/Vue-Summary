@@ -141,6 +141,30 @@ inject就是context的consumer
 如此一來，就不必層層傳遞，所有root底下的組件都可以inject data
 ```
 
+## dynamic component with keep alive
+```
+以前在寫vue的時候沒有把組件這概念活用，每個頁面就是一個.vue
+
+當一個頁面有幾千行程式，有很多state要管理的時候，會很不方便
+
+dynamic component的的概念有點類似conditional rendering
+
+只是每次重新渲染的時候，都會創建一個新的組件
+
+這代表組件內部的data又會被初始化，有些情況我們會希望data能留著
+
+這時候就可以在<component>外面包一層<keep-alive>
+```
+
+## ref
+```
+有時候，我們會需要透過JS取得某個HTML節點，這時候就可以使用ref
+
+EX: <input ref="username" />
+
+然後在Vue裡面就可以透過this.$refs.username來執行想要的操作
+```
+
 
 # vue-practice
 

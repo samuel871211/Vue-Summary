@@ -64,6 +64,11 @@
   <hr />
   <div>provide data from ancestor, inject data to deeply nested children</div>
   <ProvideInject />
+  <hr/>
+  <div>DynamicComponentWithKeepAlive</div>
+  <DynamicComponentWithKeepAlive/>
+  <hr/>
+  <Ref/>
 </template>
 
 <script>
@@ -80,6 +85,8 @@ import SlotWithDefaultContent from './components/SlotWithDefaultContent.vue'
 import NamedSlot from './components/NamedSlot.vue'
 import ScopedSlot from './components/ScopedSlot.vue'
 import ProvideInject from './components/ProvideInject.vue'
+import DynamicComponentWithKeepAlive from './components/DynamicComponentWithKeepAlive.vue'
+import Ref from './components/Ref.vue'
 
 export default {
   components: {
@@ -96,6 +103,8 @@ export default {
     NamedSlot,
     ScopedSlot,
     ProvideInject,
+    DynamicComponentWithKeepAlive,
+    Ref
   },
   data() {
     return {
@@ -105,6 +114,7 @@ export default {
   provide() {
     return {
       todo: this.todo,
+      todoLength: this.todo.length
     }
   },
   methods: {

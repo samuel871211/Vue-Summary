@@ -6,6 +6,6 @@
 export default {
   props: {
     primaryTitle: String,
-  }
-};
+  },
+}
 </script>
