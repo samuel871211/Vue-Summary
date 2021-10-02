@@ -69,6 +69,8 @@
   <DynamicComponentWithKeepAlive/>
   <hr/>
   <Ref/>
+  <hr/>
+  <Composition/>
 </template>
 
 <script>
@@ -87,6 +89,7 @@ import ScopedSlot from './components/ScopedSlot.vue'
 import ProvideInject from './components/ProvideInject.vue'
 import DynamicComponentWithKeepAlive from './components/DynamicComponentWithKeepAlive.vue'
 import Ref from './components/Ref.vue'
+import Composition from './components/Composition.vue'
 
 export default {
   components: {
@@ -104,7 +107,8 @@ export default {
     ScopedSlot,
     ProvideInject,
     DynamicComponentWithKeepAlive,
-    Ref
+    Ref,
+    Composition
   },
   data() {
     return {
