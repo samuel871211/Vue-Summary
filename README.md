@@ -165,8 +165,43 @@ EX: <input ref="username" />
 然後在Vue裡面就可以透過this.$refs.username來執行想要的操作
 ```
 
+## composition
+```
+當組件隨著專案成長越來越大，開始包含各種業務邏輯之後，在維護上會變得更複雜
 
-# vue-practice
+各種不同的邏輯問題分散在data, method, computed, watch等等地方
+
+以searching bar為例，這邊需要有搜尋、篩選、排序的功能，這些功能全部混在一起
+
+透過composition API就可以將不同的邏輯問題拆分開來，並且也能重複利用
+
+以程式碼的實現來看，把每個邏輯問題拆分成一個function，此function會回傳一個
+
+物件，裡面可以包含reactive data, functions，這些回傳的東西等等組件會用到
+
+組件在setup()把這些composition引用進來，注意setup()是在created()之前就執行
+
+所以我們不能在setup()裡面使用data, method, computed等等，但可以取用props
+
+setup()回傳的物件就可以在整個組件內部使用，如此就可以達到邏輯問題拆分、重複利用
+```
+
+## before after
+```
+很tricky的一個css效果，之前沒認真學過，大概要等到真的用到才會想學吧(x
+
+這邊是使用before跟after來達到視差滾動的效果，這邊牽扯到蠻多position的邏輯
+
+背景圖片使用fixed定位在左上角，寬高佔滿整個viewport，然後前景圖片也是一樣，
+
+但是前景圖片是用absolute定位，所以頁面往下滾的時候前景圖片會被往上捲，然後
+
+absoulte定位會導致margin-bottom失效(沒錯，css就是一堆這種小地雷)
+
+所以我們在前景圖片加上一個after，給它一個寬高佔滿整個viewport，但是要透明的
+
+這樣就可以讓fixed的背景圖片慢慢的透過去，達到視差滾動的效果了。
+```
 
 ## Project setup
 ```
