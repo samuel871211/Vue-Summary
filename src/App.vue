@@ -11,6 +11,8 @@
     <button @click="selectedComponent = 'Ref'">Ref</button>
     <button @click="selectedComponent = 'Composition'">Composition</button>
     <button @click="selectedComponent = 'BeforeAfter'">BeforeAfter</button>
+    <button @click="selectedComponent = 'AweSomeHTML5Features'">AweSomeHTML5Features</button>
+    <button @click="selectedComponent = 'VuexMapFunctions'">VuexMapFunctions</button>
     <button @click="
       complexComponent = 'ComponentProps';
       selectedComponent = ''"
@@ -104,6 +106,8 @@ import DynamicComponentWithKeepAlive from './components/DynamicComponentWithKeep
 import Ref from './components/Ref.vue'
 import Composition from './components/Composition.vue'
 import BeforeAfter from './components/BeforeAfter.vue'
+import AweSomeHTML5Features from './components/AweSomeHTML5Features.vue'
+import VuexMapFunctions from './components/VuexMapFunctions.vue'
 
 export default {
   components: {
@@ -123,7 +127,9 @@ export default {
     Slot,
     SlotWithDefaultContent,
     ScopedSlot,
-    BeforeAfter
+    BeforeAfter,
+    AweSomeHTML5Features,
+    VuexMapFunctions
   },
   data() {
     return {

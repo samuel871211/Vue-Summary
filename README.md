@@ -203,6 +203,48 @@ absoulte定位會導致margin-bottom失效(沒錯，css就是一堆這種小地�
 這樣就可以讓fixed的背景圖片慢慢的透過去，達到視差滾動的效果了。
 ```
 
+## AweSomeHTML5Features
+```
+mark => 背景黃色的螢光筆highlight文字
+
+details => ▶ 詳細資料，可收合展開
+
+figure => 包住圖片
+
+figcaption => 圖片底下的文字
+
+progress => 進度條
+
+del => 中間會有一條被刪掉的線
+
+ins => 底下會有一條新增的底線
+
+cite => 引用的文字，斜體
+
+pre => 保留文字的空白、換行符號
+
+code => 放程式碼
+
+dfn => 專業的名詞定義，斜體
+```
+
+## vuex map functions
+```
+mapState => 一次取得store的多個state，可注入computed
+
+mapGetters => 一次取得store的多個getters，可注入computed
+
+state跟getters的差別在，getters = computed state
+
+mapMutations => 一次取得store的多個mutations，可注入methods
+
+actions跟mutations的差別在，actions是async，mutations是sync
+
+所以actions可以包含請求API的動作，並且actions內可調用mutations
+
+actions內部不建議直接改變state，而是commit mutations的方式
+```
+
 ## Project setup
 ```
 npm install

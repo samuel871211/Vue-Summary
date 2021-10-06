@@ -1,7 +1,7 @@
 <template>
     <button @click="count -= 1">-</button>
     <button @click="count += 1">+</button>
-    <div>I am TabThree, current count = {{ count }}</div>
+    <div class="tabThree">I am TabThree, current count = {{ count }}</div>
 </template>
 
 <script>
@@ -13,3 +13,9 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.tabThree{
+    color: $gold;
+}
+</style>
