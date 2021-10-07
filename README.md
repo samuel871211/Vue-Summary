@@ -245,6 +245,15 @@ actions跟mutations的差別在，actions是async，mutations是sync
 actions內部不建議直接改變state，而是commit mutations的方式
 ```
 
+## interSectionObserverAPI
+```
+瀏覽器原生的API，提供async方法，一次觀察多個DOM元素是否進入容器
+
+容器預設是viewport，也可以是DOM元素的parent或是ancestor
+
+可用來實作lazyLoading, infinite scroll，或是頁面滾到最底端換頁
+```
+
 ## Project setup
 ```
 npm install

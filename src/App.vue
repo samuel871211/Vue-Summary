@@ -13,6 +13,7 @@
     <button @click="selectedComponent = 'BeforeAfter'">BeforeAfter</button>
     <button @click="selectedComponent = 'AweSomeHTML5Features'">AweSomeHTML5Features</button>
     <button @click="selectedComponent = 'VuexMapFunctions'">VuexMapFunctions</button>
+    <button @click="selectedComponent = 'InterSectionObserverAPI'">InterSectionObserverAPI</button>
     <button @click="
       complexComponent = 'ComponentProps';
       selectedComponent = ''"
@@ -108,6 +109,7 @@ import Composition from './components/Composition.vue'
 import BeforeAfter from './components/BeforeAfter.vue'
 import AweSomeHTML5Features from './components/AweSomeHTML5Features.vue'
 import VuexMapFunctions from './components/VuexMapFunctions.vue'
+import InterSectionObserverAPI from './components/InterSectionObserverAPI.vue'
 
 export default {
   components: {
@@ -129,7 +131,8 @@ export default {
     ScopedSlot,
     BeforeAfter,
     AweSomeHTML5Features,
-    VuexMapFunctions
+    VuexMapFunctions,
+    InterSectionObserverAPI
   },
   data() {
     return {
